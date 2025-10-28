@@ -18,7 +18,7 @@ import {
   OrderFilters
 } from '../types';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'https://bakerybackend-kpow.onrender.com/';
 
 class ApiService {
   private axiosInstance: AxiosInstance;
