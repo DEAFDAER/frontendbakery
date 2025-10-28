@@ -18,7 +18,7 @@ import {
 import { useForm } from 'react-hook-form';
 import { PersonAddOutlined } from '@mui/icons-material';
 import { useAuth } from '../hooks/useAuth';
-import { RegisterRequest, UserRole } from '../types';
+import { RegisterRequest } from '../types';
 
 interface RegisterFormData extends RegisterRequest {}
 

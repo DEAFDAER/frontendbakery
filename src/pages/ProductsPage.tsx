@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Container,
   Typography,
@@ -19,7 +19,6 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  Alert,
   Fab,
   Badge,
 } from '@mui/material';
@@ -51,22 +50,21 @@ const ProductsPage: React.FC = () => {
   });
 
   // Fetch categories
-  const { data: categories = [] } = useQuery<Category[]>({
-    queryKey: ['categories'],
-    queryFn: apiService.getCategories
-  });
+  // Categories are not currently used in the component
+  // const { data: categories = [] } = useQuery<Category[]>({
+  //   queryKey: ['categories'],
+  //   queryFn: apiService.getCategories
+  // });
 
-  // Add to cart mutation
-  const addToCartMutation = useMutation<Product, Error, Product>({
-    mutationFn: (product) => {
-      // For now, just add to local state
-      // In a real app, you'd send this to the backend
-      return Promise.resolve(product);
-    },
-    onSuccess: () => {
-      toast.success('Added to cart!');
-    }
-  });
+  // Add to cart mutation - currently using local state instead
+  // const addToCartMutation = useMutation<Product, Error, Product>({
+  //   mutationFn: (product) => {
+  //     return Promise.resolve(product);
+  //   },
+  //   onSuccess: () => {
+  //     toast.success('Added to cart!');
+  //   }
+  // });
 
   // Create product mutation
   const createProductMutation = useMutation<Product, Error, ProductFormData>({
